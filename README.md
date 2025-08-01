@@ -84,6 +84,7 @@ No AI models or external AI APIs are embedded in the runtime of the application.
 ```
 
 <img width="1239" height="760" alt="Screenshot 2025-08-01 165004" src="https://github.com/user-attachments/assets/767fb582-65d4-46fb-b367-6fbead1080d5" />
+<img width="566" height="700" alt="image" src="https://github.com/user-attachments/assets/7b6c17bc-f663-450a-865e-ddd4c43a1997" />
 
 ### Example Report
 
