@@ -112,6 +112,7 @@ const submitForm = useCallback(async () => {
   
       console.log("📤 Final payload to send:", payload);
   
+      // First, submit to products API
       const nextResponse = await fetch('/api/products', {
         method: 'POST',
         headers: {
@@ -125,6 +126,29 @@ const submitForm = useCallback(async () => {
   
       if (nextResponse.ok) {
         alert("Product created successfully!");
+        
+        // Generate and download PDF
+        try {
+          const pdfResponse = await fetch('/api/generate-pdf', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+
+          if (pdfResponse.ok) {
+            const blob = await pdfResponse.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'submission-report.pdf';
+            a.click();
+            window.URL.revokeObjectURL(url);
+          } else {
+            console.error('PDF generation failed');
+          }
+        } catch (pdfError) {
+          console.error('PDF generation error:', pdfError);
+        }
       } else {
         alert("❌ Error: ${result.message || 'Failed to create product'}");
       }
