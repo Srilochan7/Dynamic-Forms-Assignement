@@ -1,0 +1,20 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model product {
+  id            String   @id @default(cuid())
+  name          String
+  type          String
+  batteryNeeded Boolean
+  batteryType   String?
+  features      Json    // Using JSON instead of String[] for SQLite
+  imageUrl      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
