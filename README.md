@@ -82,7 +82,8 @@ No AI models or external AI APIs are embedded in the runtime of the application.
   "imageUrl": "https://example.com/image.png"
 }
 ```
-<img width="711" height="629" alt="Screenshot 2025-07-17 100936" src="https://github.com/user-attachments/assets/ae72890a-9632-4546-83f5-3ca103850cec" />
+
+<img width="1239" height="760" alt="Screenshot 2025-08-01 165004" src="https://github.com/user-attachments/assets/767fb582-65d4-46fb-b367-6fbead1080d5" />
 
 ### Example Report
 
